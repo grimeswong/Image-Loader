@@ -1,26 +1,31 @@
 import React, {useState, useEffect} from 'react'
-import bg_img from './img/test_bg.png'
+const images = require('./img/ImageList.js')
 
 const ImageStore = (props) => {
 
     const [imgStatus, setImgStatus] = useState(false);
 
     useEffect(() => {
-        
-    }, []); 
+
+    }, []);
 
     const updateStatus = () => {
         setImgStatus(true);
     }
 
-    return (    
+    const entries = Object.entries(images) // get the content of modules
+    console.log(entries);
+    const displayImg = entries.map((image, index) =>
+        <img key={index} src={image[1]} />
+    )
+
+    return (
         <div>
             <h2>This is Image component</h2>
             <h3>{imgStatus===true ? "Loaded" : "Loading..."}</h3>
-            <img src={bg_img} alt="Background" onLoad={updateStatus}/>
-        </div>       
-    )   
+            {displayImg}
+        </div>
+    )
 }
 
 export default ImageStore;
- 

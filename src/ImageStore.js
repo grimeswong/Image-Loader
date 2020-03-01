@@ -23,7 +23,7 @@ const ImageStore = (props) => {
     totalImage = values.length;
     const displayImg = values.map((location, index) => {
       return (
-          <img key={index} src={location} alt={index}onLoad={updateStatus} style={{width: "200px", display: "none"}} />
+          <img key={index} src={location} alt={index}onLoad={updateStatus} style={{width: "300px"}} />
       )
     })
 

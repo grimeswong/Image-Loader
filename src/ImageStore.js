@@ -13,10 +13,10 @@ const ImageStore = (props) => {
         setImgStatus(true);
     }
 
-    const entries = Object.entries(images) // get the content of modules
-    console.log(entries);
-    const displayImg = entries.map((image, index) =>
-        <img key={index} src={image[1]} />
+    const values = Object.values(images) // get the value of objects
+    console.log(values);
+    const displayImg = values.map((location, index) =>
+        <img key={index} src={location} />
     )
 
     return (

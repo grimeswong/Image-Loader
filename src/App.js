@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageStore from './ImageStore.js'
 import './App.css'
-import bg from "./img/city-landscape-london-england-united-kingdom-1600x2560.jpg"
+import bg from "./img/img1.jpg"
 
 function App() {
   return (

@@ -3,7 +3,7 @@ import ProgressiveImage from 'react-progressive-image'
 import img1ThumbNail from './img/img1-thumbnail.jpg'
 import styles from './ImageStore.module.css'
 
-const images = require('./img/ImageList.js')
+const { images } = require('./img/ImageList.js') // Import the module of images 
 
 
 const ImageStore = (props) => {
@@ -22,14 +22,11 @@ const ImageStore = (props) => {
           setImgStatus(true)
         }
     }
-
-    const values = Object.values(images) // get the value of objects
-    console.log(`Images details: ${JSON.stringify(values)}`);
-    totalImage = values.length;
-    const displayImg = values.map((location, index) => {
+    totalImage = images.length;
+    const displayImg = images.map((element, index) => {
       return (
           <figure key={index} className={styles.image_wrapper}>
-            <ProgressiveImage src={location} placeholder={img1ThumbNail}>
+            <ProgressiveImage src={element.location} placeholder={element.thumbnail}>
               {(src, loading) => (
                 <img src={src} alt={index} onLoad={loading?null: updateStatus} style={{opacity: loading ? 0.5 : 1}} />
               )}

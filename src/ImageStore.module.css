@@ -1,15 +1,19 @@
 .top_wrapper {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: 300px 300px;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-  justify-content: space-evenly;
-  align-content: center;
+  margin: auto;
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-flow: row wrap; /* equal flex-direction & flex-wrap */
+  justify-content: center;
 }
 
 .image_wrapper {
-  width: 100%;
+  /* flex: 1;  /* to create equal width & height for the row */
+  min-width: 200px;
+  max-width: 300px;
+  min-height: 200px;
+  max-width: 300px;
+
 }
 
 img {

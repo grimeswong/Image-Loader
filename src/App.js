@@ -6,7 +6,7 @@ import bg from "./img/img1.jpg"
 function App() {
   return (
     <div className="App" style={{backgroundImage: `url(${bg})`}}>
-      <h1>This is App H1</h1>
+      <h1>Image Loader</h1>
       <ImageStore />
     </div>
   );

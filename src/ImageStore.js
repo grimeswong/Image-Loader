@@ -24,14 +24,14 @@ const ImageStore = (props) => {
     }
 
     const values = Object.values(images) // get the value of objects
-    console.log(values);
+    console.log(`Images details: ${JSON.stringify(values)}`);
     totalImage = values.length;
     const displayImg = values.map((location, index) => {
       return (
           <figure key={index} className={styles.image_wrapper}>
             <ProgressiveImage src={location} placeholder={img1ThumbNail}>
               {(src, loading) => (
-                <img src={src} alt={index} onLoad={updateStatus} style={{opacity: loading ? 0.5 : 1}} />
+                <img src={src} alt={index} onLoad={loading?null: updateStatus} style={{opacity: loading ? 0.5 : 1}} />
               )}
             </ProgressiveImage>
           </figure>
@@ -41,7 +41,7 @@ const ImageStore = (props) => {
     return (
         <div>
             <h2>This is Image component</h2>
-            <h3>{imgStatus===true ? "All image is Loaded" : "Image Loading..."}</h3>
+            <h3>Image Loading Status: {imgStatus===true ? "All image is Loaded" : "Image Loading..."}</h3>
             <div className={styles.top_wrapper}>
               {displayImg}
             </div>

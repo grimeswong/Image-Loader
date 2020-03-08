@@ -6,8 +6,9 @@ html, body, h1, figure {
 }
 
 .App {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
   text-align: center;
   color: white;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 6%, rgba(0,212,255,1) 100%);
 }

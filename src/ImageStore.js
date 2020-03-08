@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import ProgressiveImage from 'react-progressive-image'
-import img1ThumbNail from './img/img1-thumbnail.jpg'
 import styles from './ImageStore.module.css'
 
 const { images } = require('./img/ImageList.js') // Import the module of images

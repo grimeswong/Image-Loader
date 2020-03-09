@@ -25,7 +25,7 @@ const ImageStore = (props) => {
     totalImage = images.length;
     console.log(images)
     const displayLocalImg = images.map((element, index) => {
-      return <DisplayImages key={index} image={element} />
+      return <DisplayImages key={index} image={element} updateStatus={updateStatus} />
     })
 
     return (

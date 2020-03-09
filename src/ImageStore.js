@@ -29,7 +29,7 @@ const ImageStore = (props) => {
 
     return (
       <div>
-          <h2>This is local image loader</h2>
+          <h2>This is a local image loader</h2>
           <h3>Image Loading Status: {imgStatus===true ? "All image is Loaded" : "Image Loading..."}</h3>
           <div className="top_wrapper">
             {displayLocalImg}

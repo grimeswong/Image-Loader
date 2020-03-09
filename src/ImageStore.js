@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import ProgressiveImage from 'react-progressive-image'
-import DisplayImages from './DisplayImage.js'
+import DisplayImage from './DisplayImage.js'
 
 const { images } = require('./img/ImageList.js') // Import the module of images
 
@@ -23,9 +22,9 @@ const ImageStore = (props) => {
     }
 
     totalImage = images.length;
-    console.log(images)
+    // console.log(images)
     const displayLocalImg = images.map((element, index) => {
-      return <DisplayImages key={index} image={element} updateStatus={updateStatus} />
+      return <DisplayImage key={index} image={element} updateStatus={updateStatus} />
     })
 
     return (

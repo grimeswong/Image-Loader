@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import ProgressiveImage from 'react-progressive-image'
 
 const DisplayImage = (props) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageStore from './ImageStore.js'
-import GetExtImage from './GetExtImage.js'
 import './App.css'
+import './DisplayImage.css'
 
 const App = () => {
 
@@ -9,7 +9,6 @@ const App = () => {
     <div className="App">
       <h1>Image Loader</h1>
       <ImageStore />
-      <GetExtImage />
     </div>
   );
 }

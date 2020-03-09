@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import ProgressiveImage from 'react-progressive-image'
-import './DisplayImage.css'
+import DisplayImages from './DisplayImage.js'
 
 const { images } = require('./img/ImageList.js') // Import the module of images
 
@@ -25,15 +25,7 @@ const ImageStore = (props) => {
     totalImage = images.length;
     console.log(images)
     const displayLocalImg = images.map((element, index) => {
-      return (
-          <figure key={index} className="image_wrapper">
-            <ProgressiveImage src={element.location} placeholder={element.thumbnail}>
-              {(src, loading) => (
-                <img className={{}} src={src} alt={index} onLoad={loading?null: updateStatus} style={{opacity: loading ? 0.5 : 1}} />
-              )}
-            </ProgressiveImage>
-          </figure>
-      )
+      return <DisplayImages key={index} image={element} />
     })
 
     return (

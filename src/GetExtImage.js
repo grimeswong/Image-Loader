@@ -4,7 +4,7 @@ import DisplayImage from './DisplayImage.js';
 const GetExtImage = (props) => {
 
   const displayExtImg = props.image.map((element, index) => {
-    return <img key={index} src={element} alt=""/>
+    return <img key={index} src={element.location} alt=""/>
   })
 
   return (

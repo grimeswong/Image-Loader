@@ -1,16 +1,21 @@
-import React from 'react'
+import React, {Component} from 'react'
 import ImageStore from './ImageStore.js'
 import './App.css'
 import './DisplayImage.css'
 
-const App = () => {
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-  return (
-    <div className="App">
-      <h1>Image Loader</h1>
-      <ImageStore />
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <h1>Image Loader</h1>
+        <ImageStore />
+      </div>
+    );
+  }
 }
 
 export default App;

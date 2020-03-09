@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import ProgressiveImage from 'react-progressive-image'
-import img1ThumbNail from './img/img1-thumbnail.jpg'
-import styles from './ImageStore.module.css'
+import DisplayImage from './DisplayImage.js'
 
 const { images } = require('./img/ImageList.js') // Import the module of images
 
@@ -22,27 +20,21 @@ const ImageStore = (props) => {
           setImgStatus(true)
         }
     }
+
     totalImage = images.length;
-    const displayImg = images.map((element, index) => {
-      return (
-          <figure key={index} className={styles.image_wrapper}>
-            <ProgressiveImage src={element.location} placeholder={element.thumbnail}>
-              {(src, loading) => (
-                <img className={{}} src={src} alt={index} onLoad={loading?null: updateStatus} style={{opacity: loading ? 0.5 : 1}} />
-              )}
-            </ProgressiveImage>
-          </figure>
-      )
+    // console.log(images)
+    const displayLocalImg = images.map((element, index) => {
+      return <DisplayImage key={index} image={element} updateStatus={updateStatus} />
     })
 
     return (
-        <div>
-            <h2>This is Image component</h2>
-            <h3>Image Loading Status: {imgStatus===true ? "All image is Loaded" : "Image Loading..."}</h3>
-            <div className={styles.top_wrapper}>
-              {displayImg}
-            </div>
-        </div>
+      <div>
+          <h2>This is a local image loader</h2>
+          <h3>Image Loading Status: {imgStatus===true ? "All image is Loaded" : "Image Loading..."}</h3>
+          <div className="top_wrapper">
+            {displayLocalImg}
+          </div>
+      </div>
     )
 }
 

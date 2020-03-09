@@ -10,14 +10,12 @@ export const getImageURL = async () => {
   for(let i=0; i<Limit; i++) {
     await axios.get(URL_address) // wait until get all the images URL
     .then((response) => {
-      console.log(response.request);
       images.push(addImagedetails(response.request));
     })
     .catch((error) => {
       console.log("error to download data");
     })
   }
-  console.log(images);
   return images;
 }
 
